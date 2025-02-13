@@ -1,0 +1,6 @@
+2025-02-12 20:14:08.731 | ERROR    | app.utils.helpers:log_exception:11 - Exception in summarize_youtube_video: Transcript is unavailable for the provided YouTube URL.
+2025-02-12 20:19:20.864 | ERROR    | app.utils.helpers:log_exception:11 - Exception in summarize_youtube_video: Transcript is unavailable for the provided YouTube URL.
+2025-02-12 20:24:31.126 | ERROR    | app.utils.helpers:log_exception:11 - Exception in summarize_youtube_video: Transcript is unavailable for the provided YouTube URL.
+2025-02-12 20:28:15.920 | ERROR    | app.utils.helpers:log_exception:11 - Exception in summarize_youtube_video: Transcript is unavailable for the provided YouTube URL.
+2025-02-12 20:38:59.653 | ERROR    | app.utils.helpers:log_exception:11 - Exception in summarize_youtube_video: Transcript is unavailable for the provided YouTube URL.
+2025-02-13 04:18:12.145 | ERROR    | app.utils.helpers:log_exception:11 - Exception in summarize_youtube_video: Transcript is unavailable for the provided YouTube URL.
