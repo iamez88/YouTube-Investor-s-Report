@@ -73,17 +73,29 @@ def get_transcript(video_url: str) -> tuple:
     if not video_id:
         log_exception(Exception("Invalid YouTube URL provided."), "get_transcript")
         return False, None, None
-    language = get_video_language(video_id)
-    if not language:
-        log_exception(Exception("Unable to determine the language for video ID."), "get_transcript")
-        return False, None, None
+    
+    transcript_list = YouTubeTranscriptApi.list_transcripts(video_id)
+
+    for transcript in transcript_list:
+        language = transcript.language_code
+        break
 
     try:
+        log_exception(Exception(f"Trying to get transcript with language: {language}"), "get_transcript")
         transcript = YouTubeTranscriptApi.get_transcript(video_id, languages=[language])
         transcript = TextFormatter().format_transcript(transcript)
         with_transcript = True
-    except Exception:
-        with_transcript = False
-        transcript = None
+    except Exception as e:
+        try:
+            transcript = YouTubeTranscriptApi.get_transcript(video_id)
+            transcript = TextFormatter().format_transcript(transcript)
+            with_transcript = True
+            return with_transcript, transcript, language
+        except Exception as fallback_e:
+            with_transcript = False
+            transcript = None
+            log_exception(fallback_e, f"Fallback attempt failed - Video ID: {video_id}")
+            raise ValueError(f"Transcript is unavailable for video ID: {video_id}")
+        
 
     return with_transcript, transcript, language

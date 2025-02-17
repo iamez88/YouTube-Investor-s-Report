@@ -40,13 +40,22 @@ Instructions:
 - Report any technical analysis that mentions the support, resistance level, as well as buy or sell triggers. 
 - Highlight any statistics, figures, or data points mentioned. 
 - Please be concise with your reporting and ensure your response format is structured and consistent.
-- Please generate your response in markdown format and make sure that any dollar sign ($) is escaped (i.e. output as \$)
+
+Note: Use proper markdown syntax:
+- Use # for main heading
+- Use ## for subheadings
+- Use * or - for bullet points
+- Use ** for bold text
+- Use * for italic text
+- Use ``` for code blocks
+- Properly escape any special characters
+
 Transcript: {transcript}
 
             """
     else:
         prompt = f"""
-You will be provided with a transcript of a YouTube video, in the {language} language, discussing stocks and the market. Your task is to analyze the transcript carefully and generate a structured, detailed report summarizing the key insights. Ensure that your analysis remains factual and is strictly based on the transcript provided.
+You will be provided with a transcript of a YouTube video, discussing stocks and the market. Your task is to analyze the transcript carefully and generate a structured, detailed report summarizing the key insights. Ensure that your analysis remains factual and is strictly based on the transcript provided.
 
 Instructions:
 - Summarize the main points covered in the video. Extract key insights related to market trends, investment strategies, risks, or recommendations.
@@ -55,7 +64,16 @@ Instructions:
 - Highlight any statistics, figures, or data points mentioned.
 - Provide your report in the language found within the transcript.   
 - Please be concise with your reporting and ensure your response format is structured and consistent.
-- Please generate your response in markdown format and make sure that any dollar sign ($) is escaped (i.e. output as \$)
+
+Note: Use proper markdown syntax:
+- Use # for main heading
+- Use ## for subheadings
+- Use * or - for bullet points
+- Use ** for bold text
+- Use * for italic text
+- Use ``` for code blocks
+- Properly escape any special characters
+
 Transcript: {transcript}
             """
     try:

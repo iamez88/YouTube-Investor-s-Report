@@ -16,7 +16,7 @@ class SummarizeRequest(BaseModel):
             r'(watch\?v=|embed/|v/|.+\?v=)?([^&=%\?]{11})'
         )
         if not re.match(youtube_regex, v):
-            raise ValueError('Invalid YouTube URL')
+            raise ValueError('Invalid YouTube URL. Please provide a valid URL.')
         return v
 
 class SummarizeResponse(BaseModel):

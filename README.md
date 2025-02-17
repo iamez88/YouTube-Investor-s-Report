@@ -1,14 +1,22 @@
-# YouTube Summarizer API
+# YouTube Investor Report API
 
 ## Overview
 
-A FastAPI-based application that summarizes YouTube video transcripts.
+A FastAPI-based application that generates a custom YouTube video report.
 
 ## Features
 
 - Extracts transcripts from YouTube videos.
-- Generates summaries of video content.
+- Generates detailed report to be displayed on front-end.
 - Provides API endpoints for integration.
+
+## Tech Stack
+- YouTubeTranscriptApi
+- Google Gemini SDK
+- Requests
+- FastAPI
+- Streamlit
+
 
 ## Setup Instructions
 
